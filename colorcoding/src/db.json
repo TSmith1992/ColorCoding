@@ -1,0 +1,20 @@
+{
+    "userList": 
+    [
+        {
+            "id": 1,
+            "userName": "Place Name Here",
+            "lastWinCombo": [
+                "red",
+                "orange",
+                "green"
+            ],
+            "profilePic": "https://thepowerofthedream.org/wp-content/uploads/2015/09/generic-profile-picture-300x300.jpg",
+            "winCount": 1,
+            "commentList": [
+                "You can't beat me!",
+                "#1!"
+            ]
+        }
+    ]
+}
