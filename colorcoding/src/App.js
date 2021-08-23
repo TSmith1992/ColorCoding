@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router } from "react-router-dom"
 import React,{ useState,useEffect } from "react"
+import LoginPage from './Components/LoginPage';
 
 //Imported hooks from react-router dom and react. Created console.log of Fetch API request to
 //possibly place in state variable. 
@@ -33,6 +34,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <LoginPage />
     </div>
   );
 }
