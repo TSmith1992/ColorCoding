@@ -1,12 +1,18 @@
+import { makeLogEntryObject } from "../gamefunctions";
 import ColorGrid from "./ColorGrid";
 import ComboEntry from "./ComboEntry";
 
-function GameInput({colorChoices,setColorChoices}) {
+function GameInput({colorChoices,setColorChoices,gameLog,setGameLog}) {
 
     function changeColorChoice(id,color) {
         let newColorChoices = JSON.parse(JSON.stringify(colorChoices));
         newColorChoices[id-1] = {id: id,color: color};
         setColorChoices(newColorChoices);
+    }
+
+    function logCombination() {
+        let newGameLog = makeLogEntryObject(colorChoices,gameLog);
+        setGameLog(newGameLog);
     }
 
     return (
@@ -26,7 +32,7 @@ function GameInput({colorChoices,setColorChoices}) {
             </div>
             <button 
                 id="enter-button"
-                onClick={()=>console.log(colorChoices)}
+                onClick={()=>{logCombination()}}
             >
                 Enter
             </button>

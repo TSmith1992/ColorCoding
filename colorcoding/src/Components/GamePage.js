@@ -4,14 +4,20 @@ import GameLog from "./GameLog";
 import GameWindow from "./GameWindow";
 
 function GamePage() {
-    const [colorChoices,setColorChoices] = useState([{id: 1,color: "red"},{id: 2,color: "blue"},{id: 3,color: "green"}])
+    const [colorChoices,setColorChoices] = useState([{id: 1,color: "white"},{id: 2,color: "white"},{id: 3,color: "white"}]);
+    const [gameLog,setGameLog] = useState([]);
 
     return (
     <div id="game-area">
         <h1>Crack the Code!</h1>
         <GameWindow />
-        <GameInput colorChoices={colorChoices} setColorChoices={setColorChoices}/>
-        <GameLog />
+        <GameInput 
+            colorChoices={colorChoices} 
+            setColorChoices={setColorChoices}
+            gameLog={gameLog}
+            setGameLog={setGameLog}
+            />
+        <GameLog logEntries={gameLog}/>
     </div>
     )
 }
