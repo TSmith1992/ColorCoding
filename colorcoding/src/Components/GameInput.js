@@ -1,23 +1,35 @@
 import ColorGrid from "./ColorGrid";
 import ComboEntry from "./ComboEntry";
 
-function GameInput() {
+function GameInput({colorChoices,setColorChoices}) {
+
+    function changeColorChoice(id,color) {
+        let newColorChoices = JSON.parse(JSON.stringify(colorChoices));
+        newColorChoices[id-1] = {id: id,color: color};
+        setColorChoices(newColorChoices);
+    }
+
     return (
         <div id="game-input-area">
             <div id="combo-display-area" className="input-section">
-                <ComboEntry key="1"/>
-                <ComboEntry key="2"/>
-                <ComboEntry key="3"/>
-                {/* <div className="combo-entry-display" id="combo-entry-one"></div>
-                <div className="combo-entry-display" id="combo-entry-two"></div>
-                <div className="combo-entry-display" id="combo-entry-three"></div> */}
+                {colorChoices.map(colorChoice=><ComboEntry 
+                    key={colorChoice.id} 
+                    colorChoice={colorChoice}
+                    />)}
             </div>
             <div id="color-selection-area" className="input-section">
-                <ColorGrid key="1"/>
-                <ColorGrid key="2"/>
-                <ColorGrid key="3"/>
+                {colorChoices.map(colorChoice=><ColorGrid 
+                    key={colorChoice.id} 
+                    colorChoice={colorChoice} 
+                    changeColorChoice={changeColorChoice}
+                    />)}
             </div>
-            <button id="enter-button">Enter</button>
+            <button 
+                id="enter-button"
+                onClick={()=>console.log(colorChoices)}
+            >
+                Enter
+            </button>
         </div>
     )
 }

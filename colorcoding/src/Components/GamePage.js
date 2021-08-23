@@ -4,7 +4,7 @@ import GameLog from "./GameLog";
 import GameWindow from "./GameWindow";
 
 function GamePage() {
-    const [colorChoices,setColorChoices] = useState([{id: 1,color: "red"},{id: 1,color: "blue"},{id: 1,color: "green"}])
+    const [colorChoices,setColorChoices] = useState([{id: 1,color: "red"},{id: 2,color: "blue"},{id: 3,color: "green"}])
 
     return (
     <div id="game-area">

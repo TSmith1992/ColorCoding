@@ -1,7 +1,6 @@
 import { comboColors } from "../gamefunctions";
 
-function ColorGrid() {
-    console.log(comboColors);
+function ColorGrid({colorChoice,changeColorChoice}) {
 
     return (
         <div className="color-grid-area">
@@ -11,7 +10,9 @@ function ColorGrid() {
                 key={color}
                 className="color-grid-unit"
                 style={{background: color}}
-                ></div>
+                onClick={()=>{changeColorChoice(colorChoice.id,color)}}
+                >
+                </div>
             )})}
         </div>
     )
