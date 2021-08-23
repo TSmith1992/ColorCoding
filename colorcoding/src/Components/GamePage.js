@@ -1,7 +1,17 @@
+import { useState } from "react";
+import GameInput from "./GameInput";
+import GameLog from "./GameLog";
+import GameWindow from "./GameWindow";
+
 function GamePage() {
+    const [colorChoices,setColorChoices] = useState([{id: 1,color: "red"},{id: 1,color: "blue"},{id: 1,color: "green"}])
+
     return (
-    <div>
+    <div id="game-area">
         <h1>Crack the Code!</h1>
+        <GameWindow />
+        <GameInput colorChoices={colorChoices} setColorChoices={setColorChoices}/>
+        <GameLog />
     </div>
     )
 }
