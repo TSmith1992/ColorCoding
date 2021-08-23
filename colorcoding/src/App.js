@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router } from "react-router-dom"
 import React,{ useState,useEffect } from "react"
 import LoginPage from './Components/LoginPage';
+import StatsPage from './Components/StatsPage';
 
 //Imported hooks from react-router dom and react. Created console.log of Fetch API request to
 //possibly place in state variable. 
@@ -10,6 +10,7 @@ import LoginPage from './Components/LoginPage';
 function App() {
   const fetchAPI="http://localhost:3000/userList"
   const [userList, setUserList] =useState([])
+  const [defaultLogin, setDefaultLogin] = useState({userName:"", image:"", winArray:[] })
 
   useEffect(() => {
     fetch(fetchAPI)
@@ -17,24 +18,23 @@ function App() {
     .then(uList => console.log(uList))
   }, [])
 
+  function handleSubmit(e){
+    //upon submission, user can be redirected to game page
+    //console.log('test');
+    e.preventDefault()
+    console.log(defaultLogin)
+  }
+  
+  function onAddNewUser(e){
+    const name=e.target.name;
+    const value=e.target.value;
+    setDefaultLogin({...defaultLogin, [name]:value})
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <LoginPage />
+      <LoginPage onAddNewUser={onAddNewUser} defaultLogin={defaultLogin} handleSubmit={handleSubmit}/>
+      <StatsPage userList={userList}/>
     </div>
   );
 }

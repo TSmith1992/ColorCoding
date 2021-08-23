@@ -1,20 +1,42 @@
+{ "userList":
+[{
+    "id": 1,
+    "userName": "Place Name Here",
+    "profilePic": "https://thepowerofthedream.org/wp-content/uploads/2015/09/generic-profile-picture-300x300.jpg",
+    "winArray": [{
+        "id": 1,
+        "WinCombo": ["red", "orange", "green"],
+        "comment": "You can't beat me!",
+        "winTime": 72000
+    }]
+},
 {
-    "userList": 
-    [
-        {
+    "id": 2,
+    "userName": "Megatron",
+    "profilePic": "https://thepowerofthedream.org/wp-content/uploads/2015/09/generic-profile-picture-300x300.jpg",
+    "winArray": [{
+        "id": 1,
+        "WinCombo": ["yellow", "black", "green"],
+        "comment": "New Winner!",
+        "winTime": 90000
+    }]
+},
+{
+    "id": 3,
+    "userName": "Optimus Prime",
+    "profilePic": "https://thepowerofthedream.org/wp-content/uploads/2015/09/generic-profile-picture-300x300.jpg",
+    "winArray": [{
             "id": 1,
-            "userName": "Place Name Here",
-            "lastWinCombo": [
-                "red",
-                "orange",
-                "green"
-            ],
-            "profilePic": "https://thepowerofthedream.org/wp-content/uploads/2015/09/generic-profile-picture-300x300.jpg",
-            "winCount": 1,
-            "commentList": [
-                "You can't beat me!",
-                "#1!"
-            ]
+            "WinCombo": ["blue", "yellow", "green"],
+            "comment": "Oh yeah!",
+            "winTime": 120000
+        },
+        {
+            "id": 2,
+            "WinCombo": ["white", "black", "red"],
+            "comment": "BooYah",
+            "winTime": 100000
         }
     ]
 }
+]}
