@@ -17,7 +17,7 @@ function LoginPage({ onAddNewUser, defaultLogin, handleSubmit }) {
         <br />
         <input
           type="text"
-          name="image"
+          name="profilePic"
           placeholder="Enter your profile picture URL"
           defaultValue={defaultLogin.image}
           onChange={onAddNewUser}

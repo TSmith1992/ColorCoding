@@ -1,16 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import React,{ useState,useEffect } from "react"
 import LoginPage from './Components/LoginPage';
 import StatsPage from './Components/StatsPage';
 
-//Imported hooks from react-router dom and react. Created console.log of Fetch API request to
-//possibly place in state variable. 
-
 function App() {
   const fetchAPI="http://localhost:3000/userList"
   const [userList, setUserList] =useState([])
-  const [defaultLogin, setDefaultLogin] = useState({userName:"", image:"", winArray:[] })
+  const [defaultLogin, setDefaultLogin] = useState({userName:"", profilePic:"", winArray:[] })
 
   useEffect(() => {
     fetch(fetchAPI)
@@ -18,24 +14,26 @@ function App() {
     .then(uList => setUserList(uList))
   }, [])
 
+  //function to handle submission of new profile
   function handleSubmit(e){
     //upon submission, user can be redirected to game page
-    //console.log('test');
-    e.preventDefault()
-    // fetch(fetchAPI, {
-    //   method:"POST",
-    //   headers:{
-    //     "Content-Type": "application/json"
-    //   },
-    //   body.JSON.stringify(defaultLogin)
-    // })
-    // .then(r => r.json())
-    // .then(data => console.log(data))
+    //did not keep e.prevenDefault() because page would be redirected to gaming page anyway
+    //e.preventDefault()
+    fetch(fetchAPI, {
+      method:"POST",
+      headers:{
+        "Content-Type": "application/json"
+      },
+      body : JSON.stringify(defaultLogin)
+    })
+    .then(r => r.json())
+    .then(data => console.log(data))
   }
   
+  //function to create new profile
   function onAddNewUser(e){
     const name=e.target.name;
-    const value=e.target.value;
+    let value=e.target.value;
     setDefaultLogin({...defaultLogin, [name]:value})
   }
 
