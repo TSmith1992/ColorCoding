@@ -17,19 +17,21 @@ function StatsPage({ userList }) {
         <th>Win Count</th>
       </tr>
       {leaderBoard.map((user) => (
-        <tr 
-          key={user.id}
-        >
+        <tr key={user.id}>
           <td>
             <img 
               src={user.profilePic} 
               style={{height: '300px', width: '300px'}} 
               alt='Profile Pic'/>
           </td>
-          <td>{user.userName}</td>
-          <td>Add Win Combo</td>
-          <td>Add Last Win Time</td>
-          <td>Add Last Comment</td>
+          <td>
+            <strong>{user.userName}</strong>
+          </td>
+          <td>{user.winArray[0].WinCombo[0]} {user.winArray[0].WinCombo[1]} {user.winArray[0].WinCombo[0]}</td>
+          <td>{user.winArray[0].winTime} seconds</td>
+          <td>
+            <em>{user.winArray[0].comment}</em>
+          </td>
           <td>{user["winArray"].length}</td>
         </tr>
       ))}
