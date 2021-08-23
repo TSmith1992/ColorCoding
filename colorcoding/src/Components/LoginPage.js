@@ -1,5 +1,4 @@
 import React from "react";
-import StatsPage from "./StatsPage";
 
 function LoginPage({ onAddNewUser, defaultLogin, handleSubmit }) {
   return (

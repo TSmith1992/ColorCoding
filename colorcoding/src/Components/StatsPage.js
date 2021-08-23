@@ -17,8 +17,15 @@ function StatsPage({ userList }) {
         <th>Win Count</th>
       </tr>
       {leaderBoard.map((user) => (
-        <tr key={user.id}>
-          <td><img src={user.profilePic} alt='Profile Pic'/></td>
+        <tr 
+          key={user.id}
+        >
+          <td>
+            <img 
+              src={user.profilePic} 
+              style={{height: '300px', width: '300px'}} 
+              alt='Profile Pic'/>
+          </td>
           <td>{user.userName}</td>
           <td>Add Win Combo</td>
           <td>Add Last Win Time</td>
