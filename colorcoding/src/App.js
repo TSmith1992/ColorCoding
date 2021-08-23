@@ -15,14 +15,22 @@ function App() {
   useEffect(() => {
     fetch(fetchAPI)
     .then(r => r.json())
-    .then(uList => console.log(uList))
+    .then(uList => setUserList(uList))
   }, [])
 
   function handleSubmit(e){
     //upon submission, user can be redirected to game page
     //console.log('test');
     e.preventDefault()
-    console.log(defaultLogin)
+    // fetch(fetchAPI, {
+    //   method:"POST",
+    //   headers:{
+    //     "Content-Type": "application/json"
+    //   },
+    //   body.JSON.stringify(defaultLogin)
+    // })
+    // .then(r => r.json())
+    // .then(data => console.log(data))
   }
   
   function onAddNewUser(e){
