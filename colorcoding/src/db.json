@@ -44,7 +44,7 @@
           "WinCombo": [
             "blue",
             "yellow",
-            "green"
+            "indigo"
           ],
           "comment": "Oh yeah!",
           "winTime": 120000
@@ -57,6 +57,43 @@
             "red"
           ],
           "comment": "BooYah",
+          "winTime": 100000
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "userName": "Ironhide",
+      "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUeJukRk_X_YWeW6eECTd9iUAZOyblLP40Xg&usqp=CAU",
+      "winArray": [
+        {
+          "id": 1,
+          "WinCombo": [
+            "red",
+            "indigo",
+            "orange"
+          ],
+          "comment": "MVP!",
+          "winTime": 180000
+        },
+        {
+          "id": 2,
+          "WinCombo": [
+            "red",
+            "green",
+            "blue"
+          ],
+          "comment": "Winner!",
+          "winTime": 100000
+        },
+        {
+          "id": 3,
+          "WinCombo": [
+            "black",
+            "white",
+            "red"
+          ],
+          "comment": "I'm on a roll!",
           "winTime": 100000
         }
       ]
