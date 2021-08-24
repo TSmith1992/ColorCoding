@@ -1,9 +1,12 @@
+
 import "./App.css";
 import React, { useState, useEffect, NavLink, Switch } from "react";
 import LoginPage from "./Components/LoginPage";
 import StatsPage from "./Components/StatsPage";
 import RulesBox from "./Components/RulesBox";
 import WinBox from "./Components/WinBox";
+import LoginPage from './Components/LoginPage';
+import GamePage from './Components/GamePage';
 
 function App() {
   const fetchAPI = "http://localhost:3000/userList";
@@ -50,6 +53,10 @@ function App() {
 
   return (
     <div className="App">
+
+      <LoginPage />
+      <GamePage />
+
       <LoginPage
         onAddNewUser={onAddNewUser}
         defaultLogin={defaultLogin}
