@@ -2,7 +2,7 @@ import { makeLogEntryObject } from "../gamefunctions";
 import ColorGrid from "./ColorGrid";
 import ComboEntry from "./ComboEntry";
 
-function GameInput({colorChoices,setColorChoices,gameLog,setGameLog}) {
+function GameInput({colorChoices,setColorChoices,gameLog,setGameLog,gameObject,startGame}) {
 
     function changeColorChoice(id,color) {
         let newColorChoices = JSON.parse(JSON.stringify(colorChoices));
@@ -11,31 +11,37 @@ function GameInput({colorChoices,setColorChoices,gameLog,setGameLog}) {
     }
 
     function logCombination() {
-        let newGameLog = makeLogEntryObject(colorChoices,gameLog);
+        let newGameLog = makeLogEntryObject(colorChoices,gameLog,gameObject);
         setGameLog(newGameLog);
     }
 
     return (
         <div id="game-input-area">
-            <div id="combo-display-area" className="input-section">
-                {colorChoices.map(colorChoice=><ComboEntry 
-                    key={colorChoice.id} 
-                    colorChoice={colorChoice}
-                    />)}
-            </div>
-            <div id="color-selection-area" className="input-section">
-                {colorChoices.map(colorChoice=><ColorGrid 
-                    key={colorChoice.id} 
-                    colorChoice={colorChoice} 
-                    changeColorChoice={changeColorChoice}
-                    />)}
-            </div>
-            <button 
-                id="enter-button"
-                onClick={()=>{logCombination()}}
-            >
-                Enter
-            </button>
+
+            {!gameObject.timeToWin ? 
+            <button onClick={()=>startGame()}>Start Game</button> :
+            <>
+                <div id="combo-display-area" className="input-section">
+                    {colorChoices.map(colorChoice=><ComboEntry 
+                        key={colorChoice.id} 
+                        colorChoice={colorChoice}
+                        />)}
+                </div>
+                <div id="color-selection-area" className="input-section">
+                    {colorChoices.map(colorChoice=><ColorGrid 
+                        key={colorChoice.id} 
+                        colorChoice={colorChoice} 
+                        changeColorChoice={changeColorChoice}
+                        />)}
+                </div>
+                <button 
+                    id="enter-button"
+                    onClick={()=>{logCombination()}}
+                >
+                    Enter
+                </button>
+            </>
+            }
         </div>
     )
 }
