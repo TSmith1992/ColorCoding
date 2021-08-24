@@ -6,7 +6,7 @@
 
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import { NavLink, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import LoginPage from "./Components/LoginPage";
 import StatsPage from "./Components/StatsPage";
 import GamePage from "./Components/GamePage";
