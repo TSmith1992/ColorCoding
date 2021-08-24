@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import LoginPage from "./Components/LoginPage";
 import StatsPage from "./Components/StatsPage";
+import RulesBox from "./Components/RulesBox";
 
 function App() {
   const fetchAPI = "http://localhost:3000/userList";
@@ -53,14 +54,15 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <LoginPage
-        onAddNewUser={onAddNewUser}
-        defaultLogin={defaultLogin}
-        handleSubmit={handleSubmit}
-      />
-      <StatsPage userList={userList} />
-    </div>
+    // <div className="App">
+    //   <LoginPage
+    //     onAddNewUser={onAddNewUser}
+    //     defaultLogin={defaultLogin}
+    //     handleSubmit={handleSubmit}
+    //   />
+    //   <StatsPage userList={userList} />
+    // </div>
+    <RulesBox defaultLogin={defaultLogin}/>
   );
 }
 
