@@ -11,27 +11,32 @@ function GamePage() {
     const [timer,setTimer] = useState(0);
 
     const checkWin = () => gameLog[0]&&gameLog[gameLog.length-1].win ? true : false;
+    // console.log("Win?",checkWin());
+    // console.log(gameLog);
 
-    // useEffect(()=>{
-    //     let intervalTime = timer;
-    //     let countdown = setInterval(()=>{
-    //         let win = checkWin();
-    //         console.log("Win Status",win);
-    //         if (intervalTime>0&&!win) {
-    //             // let newTime = timer - 1000;
-    //             // console.log(newTime);
-    //             setTimer(timer=>timer-1000);
-    //             intervalTime=intervalTime-1000;
-    //             console.log("Interval Timer:",intervalTime);
-    //         } else {
-    //             clearInterval(countdown);
-    //             console.log("Timer Done");
-    //         }
-    //     }, 1000);
-    //     return function cleanup() {
-    //         clearInterval(countdown);
-    //     }
-    // },[gameObject])
+    useEffect(()=>{
+        let intervalTime = timer;
+        let gameLogInner = [...gameLog];
+        let countdown = setInterval(()=>{
+            let win = checkWin();
+            console.log("Win Status",win);
+            console.log(gameLogInner);
+            // debugger;
+            if (intervalTime>0&&!win) {
+                // let newTime = timer - 1000;
+                // console.log(newTime);
+                setTimer(timer=>timer-1000);
+                intervalTime=intervalTime-1000;
+                console.log("Interval Timer:",intervalTime);
+            } else {
+                clearInterval(countdown);
+                console.log("Timer Done");
+            }
+        }, 1000);
+        return function cleanup() {
+            clearInterval(countdown);
+        }
+    },[gameObject,gameLog])
 
     function startGame() {
         let newGame = newGameObject();

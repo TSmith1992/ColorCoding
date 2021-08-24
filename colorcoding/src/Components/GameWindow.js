@@ -7,7 +7,7 @@ const timePrint=(time)=>`${Math.floor(time/60000).toLocaleString('en-US', {
   })}`
 
 function GameWindow({timer}) {
-    console.log("Game Window Timer:",timer);
+    // console.log("Game Window Timer:",timer);
     return (
         <div>
             <img 
