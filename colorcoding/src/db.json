@@ -3,7 +3,7 @@
     {
       "id": 1,
       "userName": "BumbleBee",
-      "profilePic": "https://thepowerofthedream.org/wp-content/uploads/2015/09/generic-profile-picture-300x300.jpg",
+      "profilePic": "https://pbs.twimg.com/profile_images/1096104026024726528/ubpWKojv.png",
       "winArray": [
         {
           "id": 1,
@@ -20,7 +20,7 @@
     {
       "id": 2,
       "userName": "Megatron",
-      "profilePic": "https://thepowerofthedream.org/wp-content/uploads/2015/09/generic-profile-picture-300x300.jpg",
+      "profilePic": "https://assets.entrepreneur.com/content/3x2/2000/megatron-eat-your-heart-out-mit-built-transformer.jpg",
       "winArray": [
         {
           "id": 1,
@@ -37,14 +37,14 @@
     {
       "id": 3,
       "userName": "Optimus Prime",
-      "profilePic": "https://thepowerofthedream.org/wp-content/uploads/2015/09/generic-profile-picture-300x300.jpg",
+      "profilePic": "https://i.pinimg.com/originals/d7/69/93/d769935059ac8329e4627223c55f54f7.jpg",
       "winArray": [
         {
           "id": 1,
           "WinCombo": [
             "blue",
             "yellow",
-            "green"
+            "indigo"
           ],
           "comment": "Oh yeah!",
           "winTime": 120000
@@ -57,6 +57,43 @@
             "red"
           ],
           "comment": "BooYah",
+          "winTime": 100000
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "userName": "Ironhide",
+      "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUeJukRk_X_YWeW6eECTd9iUAZOyblLP40Xg&usqp=CAU",
+      "winArray": [
+        {
+          "id": 1,
+          "WinCombo": [
+            "red",
+            "indigo",
+            "orange"
+          ],
+          "comment": "MVP!",
+          "winTime": 180000
+        },
+        {
+          "id": 2,
+          "WinCombo": [
+            "red",
+            "green",
+            "blue"
+          ],
+          "comment": "Winner!",
+          "winTime": 100000
+        },
+        {
+          "id": 3,
+          "WinCombo": [
+            "black",
+            "white",
+            "red"
+          ],
+          "comment": "I'm on a roll!",
           "winTime": 100000
         }
       ]
