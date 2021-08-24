@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, NavLink, Switch } from "react";
 import LoginPage from "./Components/LoginPage";
 import StatsPage from "./Components/StatsPage";
 import RulesBox from "./Components/RulesBox";
@@ -26,15 +26,7 @@ function App() {
     //did not keep e.prevenDefault() because page would be redirected to gaming page anyway
     if (!defaultLogin.userName || !defaultLogin.profilePic) {
       alert("Please complete all fields to play");
-    } else if (
-      userList.filter((player) => player.userName === defaultLogin.userName)
-    ) {
-      alert("This name has already been taken. Please choose another");
-    } else if (
-      userList.filter((player) => player.profilePic === defaultLogin.profilePic)
-    ) {
-      alert("This picture is already in use. Please choose another");
-    } else {
+    }else {
       fetch(fetchAPI, {
         method: "POST",
         headers: {
@@ -44,6 +36,7 @@ function App() {
       })
         .then((r) => r.json())
         .then((data) => console.log("POSTed"));
+        e.preventDefault()
     }
   }
 
