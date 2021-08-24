@@ -50,13 +50,13 @@ function App() {
 
   return (
     <div className="App">
-      {/* <LoginPage
+      <LoginPage
         onAddNewUser={onAddNewUser}
         defaultLogin={defaultLogin}
         handleSubmit={handleSubmit}
       />
       <StatsPage userList={userList} />
-      <RulesBox defaultLogin={defaultLogin} /> */}
+      <RulesBox defaultLogin={defaultLogin} />
       <WinBox defaultLogin={defaultLogin}/>
     </div>
   );
