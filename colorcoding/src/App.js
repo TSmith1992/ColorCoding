@@ -1,12 +1,16 @@
+//Component Tree:
+// App
+//  |---LoginPage , GamePage , StatsPage
+//                     |- GameWindow,                GameInput,                     GameLog
+//                         |- RulesBox, WinBox         |-ColorGrid, ComboEntry
 
 import "./App.css";
-import React, { useState, useEffect, NavLink, Switch } from "react";
+import React, { useState, useEffect } from "react";
+import { NavLink, Switch, Route } from "react-router-dom";
 import LoginPage from "./Components/LoginPage";
 import StatsPage from "./Components/StatsPage";
-import RulesBox from "./Components/RulesBox";
-import WinBox from "./Components/WinBox";
-import LoginPage from './Components/LoginPage';
-import GamePage from './Components/GamePage';
+import GamePage from "./Components/GamePage";
+import NavBar from "./Components/NavBar";
 
 function App() {
   const fetchAPI = "http://localhost:3000/userList";
@@ -30,7 +34,7 @@ function App() {
     //did not keep e.prevenDefault() because page would be redirected to gaming page anyway
     if (!defaultLogin.userName || !defaultLogin.profilePic) {
       alert("Please complete all fields to play");
-    }else {
+    } else {
       fetch(fetchAPI, {
         method: "POST",
         headers: {
@@ -40,7 +44,7 @@ function App() {
       })
         .then((r) => r.json())
         .then((data) => console.log("POSTed"));
-        e.preventDefault()
+      e.preventDefault();
     }
   }
 
@@ -53,18 +57,22 @@ function App() {
 
   return (
     <div className="App">
-
-      <LoginPage />
-      <GamePage />
-
-      <LoginPage
-        onAddNewUser={onAddNewUser}
-        defaultLogin={defaultLogin}
-        handleSubmit={handleSubmit}
-      />
-      <StatsPage userList={userList} />
-      <RulesBox defaultLogin={defaultLogin} />
-      <WinBox defaultLogin={defaultLogin}/>
+      <NavBar />
+      <Switch>
+        <Route path="/leaderboard">
+          <StatsPage userList={userList} />
+        </Route>
+        <Route path="/game">
+          <GamePage defaultLogin={defaultLogin} />
+        </Route>
+        <Route path="/">
+          <LoginPage
+            onAddNewUser={onAddNewUser}
+            defaultLogin={defaultLogin}
+            handleSubmit={handleSubmit}
+          />
+        </Route>
+      </Switch>
     </div>
   );
 }
