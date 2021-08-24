@@ -3,6 +3,7 @@ import React, { useState, useEffect, NavLink, Switch } from "react";
 import LoginPage from "./Components/LoginPage";
 import StatsPage from "./Components/StatsPage";
 import RulesBox from "./Components/RulesBox";
+import WinBox from "./Components/WinBox";
 
 function App() {
   const fetchAPI = "http://localhost:3000/userList";
@@ -49,13 +50,14 @@ function App() {
 
   return (
     <div className="App">
-      <LoginPage
+      {/* <LoginPage
         onAddNewUser={onAddNewUser}
         defaultLogin={defaultLogin}
         handleSubmit={handleSubmit}
       />
       <StatsPage userList={userList} />
-      <RulesBox defaultLogin={defaultLogin} />
+      <RulesBox defaultLogin={defaultLogin} /> */}
+      <WinBox defaultLogin={defaultLogin}/>
     </div>
   );
 }

@@ -1,18 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 function RulesBox({ defaultLogin }) {
   const { userName, profilePic } = defaultLogin;
   const bodyGuardImage =
     "https://img.favpng.com/9/1/11/the-bodyguard-security-guard-bouncer-clip-art-png-favpng-SyNyVbzBdhT0Sv9vZFe9z6XYZ.jpg";
+  const [showRules, setShowRules] = useState(true);
 
-    // Button that can be used to toggle between safe image and rules Box:
- //     <button className="rulesButton">
-//     {userName === "rulesButton"
-//       ? "Go back to safe"
-//       : "Go ask the Safe Guard"}
-//   </button>
-
- if (bodyGuardImage) {
+  // Button that can be used to toggle between safe image and rules Box:
+  if (bodyGuardImage && showRules) {
     return (
       <span>
         <img src={bodyGuardImage} alt="Safe Holder" />
@@ -26,8 +21,8 @@ function RulesBox({ defaultLogin }) {
           <strong>
             <em>=RULES=</em>
           </strong>
-          * You will have three (5) chances to try and choose the correct
-          combination of colors. {"\n"}* Choose amongst the nine (9) colors
+          * You will have unlimited chances to try and choose the correct
+          combination of colors. * Choose amongst the nine (9) colors
           under each white square ⬜ . <em> psst...white is ALSO a color! </em>*
           You will be timed ⏱️, so make sure to
           <strong>
@@ -37,13 +32,18 @@ function RulesBox({ defaultLogin }) {
           doing. Each symbol after your entry means something:
           <div>
             ❌ : No colors were correct. 😬 : Only one (1) of the colors was
-            correct. 🔥 : Two (2) of the colors are correct. ✨ : All the colors
-            are correct, but not in the right order. 🌟 : SUCCESS!
+            correct. 🔥 : Two (2) of the colors are correct. 🌟 : SUCCESS!
           </div>
           If you forget the rules while you're tryin', just gimme a ring and
           I'll remind you! Good luck, {userName}!
         </div>
         <img src={profilePic} alt="Player" />
+        <button
+          className="rulesButton"
+          onClick={() => setShowRules(!showRules)}
+        >
+          {showRules ? "Go back to safe" : "Go ask the Safe Guard"}
+        </button>
       </span>
     );
   } else {
@@ -52,10 +52,10 @@ function RulesBox({ defaultLogin }) {
         <strong>
           <em>=RULES=</em>
         </strong>
-        * You will have three (5) chances to try and choose the correct
-        combination of colors. {"\n"}* Choose amongst the nine (9) colors under
+        * You will have unlimited chances to try and choose the correct
+        combination of colors. * Choose amongst the nine (9) colors under
         each white square ⬜ . <em> psst...white is ALSO a color! </em>* You
-        will be timed ⏱️, so make sure to{" "}
+        will be timed ⏱️, so make sure to
         <strong>
           <em>***CRACK THE CODE***</em>
         </strong>
@@ -63,11 +63,17 @@ function RulesBox({ defaultLogin }) {
         Each symbol after your entry means something:
         <div>
           ❌ : No colors were correct. 😬 : Only one (1) of the colors was
-          correct. 🔥 : Two (2) of the colors are correct. ✨ : All the colors
-          are correct, but not in the right order. 🌟 : SUCCESS!
+          correct. 🔥 : Two (2) of the colors are correct. 🌟 : SUCCESS!
         </div>
         If you forget the rules while you're tryin', just gimme a ring and I'll
         remind you! Good luck, {userName}!
+        <img src={profilePic} alt="Player" />
+        <button
+          className="rulesButton"
+          onClick={() => setShowRules(!showRules)}
+        >
+          {showRules ? "Go back to safe" : "Go ask the Safe Guard"}
+        </button>
       </div>
     );
   }
