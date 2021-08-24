@@ -13,6 +13,7 @@ function App() {
     winArray: [],
   });
 
+  //Initial GET request
   useEffect(() => {
     fetch(fetchAPI)
       .then((r) => r.json())
@@ -54,15 +55,15 @@ function App() {
   }
 
   return (
-    // <div className="App">
-    //   <LoginPage
-    //     onAddNewUser={onAddNewUser}
-    //     defaultLogin={defaultLogin}
-    //     handleSubmit={handleSubmit}
-    //   />
-    //   <StatsPage userList={userList} />
-    // </div>
-    <RulesBox defaultLogin={defaultLogin}/>
+    <div className="App">
+      <LoginPage
+        onAddNewUser={onAddNewUser}
+        defaultLogin={defaultLogin}
+        handleSubmit={handleSubmit}
+      />
+      <StatsPage userList={userList} />
+      <RulesBox defaultLogin={defaultLogin} />
+    </div>
   );
 }
 
