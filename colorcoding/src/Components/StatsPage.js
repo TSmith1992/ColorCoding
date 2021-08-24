@@ -6,10 +6,7 @@ function StatsPage({ userList }) {
     (a, b) => b["winArray"].length - a["winArray"].length
   );
 
-  let colorBox1;
-  let colorBox2;
-  let colorBox3;
-
+  const leaderBoardWin = leaderBoard.filter(player =>player.winArray.length>0)
 
   return (
     <table>
@@ -23,31 +20,32 @@ function StatsPage({ userList }) {
         <th>Last Comment</th>
         <th>Win Count</th>
       </tr>
-      {leaderBoard.map((user) => (
+      {leaderBoardWin.map((user) => (
         <tr key={user.id}>
           <td>
-            <img 
-              src={user.profilePic} 
-              style={{height: '300px', width: '300px'}} 
-              alt='Profile Pic'/>
+            <img
+              src={user.profilePic}
+              style={{ height: "300px", width: "300px" }}
+              alt="Profile Pic"
+            />
           </td>
           <td>
             <strong>{user.userName}</strong>
           </td>
-          <td style={{background: `${user.winArray[0].WinCombo[0]}`}}>
+          <td style={{ background: `${user.winArray[0].WinCombo[0]}` }}>
             {user.winArray[0].WinCombo[0]}
           </td>
-          <td style={{background: `${user.winArray[0].WinCombo[1]}`}}>
+          <td style={{ background: `${user.winArray[0].WinCombo[1]}` }}>
             {user.winArray[0].WinCombo[1]}
           </td>
-          <td style={{background: `${user.winArray[0].WinCombo[2]}`}}>
+          <td style={{ background: `${user.winArray[0].WinCombo[2]}` }}>
             {user.winArray[0].WinCombo[2]}
           </td>
           <td>{user.winArray[0].winTime} seconds</td>
           <td>
             <em>{user.winArray[0].comment}</em>
           </td>
-          <td>{user["winArray"].length}</td>
+          <td>{user.winArray.length}</td>
         </tr>
       ))}
     </table>
