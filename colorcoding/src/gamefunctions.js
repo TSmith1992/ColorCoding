@@ -52,6 +52,16 @@ function newGameObject(numOfColors=defaultNumOfColors,millisecondsToWin=defaultG
     }
 }
 
-//create a function called getGameResult that takes in the gameData and log, it returns new 
+//the function createWinObject should take in the gameObject, the time,and log. It should return a winObject compatable with the database. We can't post directly to the winArray in the database so we'll need to pull the user's existing winArray, add the new one to it, and then PATCH winArray with the whole new one. But we'll do that elsewhere.
 
-export {comboColors, makeLogEntryObject, newGameObject};
+function createWinObject(gameObject,time,log) {
+    //we will need to add the id to this object later
+    return {
+        winCombo: [...gameObject.winningCombo],
+        comment: "I won!",
+        winTime: gameObject.timeToWin-time,
+        numOfTries: log.length
+    }
+}
+
+export {comboColors, makeLogEntryObject, newGameObject, createWinObject};

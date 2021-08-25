@@ -2,7 +2,7 @@ import React from "react";
 
 function LoginPage({ onAddNewUser, player, handleSubmit }) {
   
-  if (player.userName==="") {
+  // if (player.userName==="") {
     return (
       <div className="container">
         <form className="add-profile-form" onSubmit={handleSubmit}>
@@ -32,13 +32,13 @@ function LoginPage({ onAddNewUser, player, handleSubmit }) {
         </form>
       </div>
     );
-  } else {
-    return (
-      <>
-        You'd better complete that before time runs out, {player.userName}!
-      </>
-    );
-  }
+  // } else {
+  //   return (
+  //     <>
+  //       You'd better complete that before time runs out, {player.userName}!
+  //     </>
+  //   );
+  // }
 }
 
 export default LoginPage;

@@ -43,8 +43,11 @@ function App() {
         body: JSON.stringify(player),
       })
         .then((r) => r.json())
-        .then((data) => console.log("POSTed"));
-      //e.preventDefault();
+        .then((data) => {
+          console.log("POSTed");
+          setPlayer(data);
+        });
+      e.preventDefault();
       <Redirect to="/game"/>
     }
   }
@@ -56,6 +59,20 @@ function App() {
     setPlayer({ ...player, [name]: value });
   }
 
+  //the function postWin should take in the user data and a game win object. It should then post it to the server
+
+  function postWin(winObject,user=player) {
+    winObject.id = user.winArray.length+1;
+    let newWinArray = [...user.winArray,winObject];
+    fetch(`${fetchAPI}/${user.id}`,{
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({winArray: newWinArray})
+    }).then(r=>r.json()).then(console.log);
+}
+
   return (
     <div className="App">
       <NavBar />
@@ -64,7 +81,7 @@ function App() {
           <StatsPage userList={userList} />
         </Route>
         <Route path="/game">
-          <GamePage player={player} />
+          <GamePage player={player} postWin={postWin} />
         </Route>
         <Route path="/">
           <LoginPage
