@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-function RulesBox({ defaultLogin }) {
-  const { userName, profilePic } = defaultLogin;
+function RulesBox({ player }) {
+  const { userName, profilePic } = player;
   const bodyGuardImage =
     "https://img.favpng.com/9/1/11/the-bodyguard-security-guard-bouncer-clip-art-png-favpng-SyNyVbzBdhT0Sv9vZFe9z6XYZ.jpg";
   const [showRules, setShowRules] = useState(true);

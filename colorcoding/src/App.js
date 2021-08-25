@@ -15,7 +15,7 @@ import NavBar from "./Components/NavBar";
 function App() {
   const fetchAPI = "http://localhost:3000/userList";
   const [userList, setUserList] = useState([]);
-  const [defaultLogin, setDefaultLogin] = useState({
+  const [player, setPlayer] = useState({
     userName: "",
     profilePic: "",
     winArray: [],
@@ -32,7 +32,7 @@ function App() {
   function handleSubmit(e) {
     //upon submission, user can be redirected to game page
     //did not keep e.prevenDefault() because page would be redirected to gaming page anyway
-    if (!defaultLogin.userName || !defaultLogin.profilePic) {
+    if (!player.userName || !player.profilePic) {
       alert("Please complete all fields to play");
     } else {
       fetch(fetchAPI, {
@@ -40,7 +40,7 @@ function App() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(defaultLogin),
+        body: JSON.stringify(player),
       })
         .then((r) => r.json())
         .then((data) => console.log("POSTed"));
@@ -53,7 +53,7 @@ function App() {
   function onAddNewUser(e) {
     const name = e.target.name;
     let value = e.target.value;
-    setDefaultLogin({ ...defaultLogin, [name]: value });
+    setPlayer({ ...player, [name]: value });
   }
 
   return (
@@ -64,12 +64,12 @@ function App() {
           <StatsPage userList={userList} />
         </Route>
         <Route path="/game">
-          <GamePage defaultLogin={defaultLogin} />
+          <GamePage player={player} />
         </Route>
         <Route path="/">
           <LoginPage
             onAddNewUser={onAddNewUser}
-            defaultLogin={defaultLogin}
+            player={player}
             handleSubmit={handleSubmit}
           />
         </Route>

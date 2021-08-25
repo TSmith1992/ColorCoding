@@ -1,8 +1,8 @@
 import React from "react";
 
-function LoginPage({ onAddNewUser, defaultLogin, handleSubmit }) {
+function LoginPage({ onAddNewUser, player, handleSubmit }) {
   
-  if (defaultLogin.userName==="") {
+  if (player.userName==="") {
     return (
       <div className="container">
         <form className="add-profile-form" onSubmit={handleSubmit}>
@@ -11,7 +11,7 @@ function LoginPage({ onAddNewUser, defaultLogin, handleSubmit }) {
             type="text"
             name="userName"
             placeholder="Enter a username..."
-            defaultValue={defaultLogin.name}
+            defaultValue={player.name}
             onChange={onAddNewUser}
           />
           <br />
@@ -19,7 +19,7 @@ function LoginPage({ onAddNewUser, defaultLogin, handleSubmit }) {
             type="text"
             name="profilePic"
             placeholder="Enter your profile picture URL"
-            defaultValue={defaultLogin.image}
+            defaultValue={player.image}
             onChange={onAddNewUser}
           />
           <br />
@@ -35,7 +35,7 @@ function LoginPage({ onAddNewUser, defaultLogin, handleSubmit }) {
   } else {
     return (
       <>
-        You'd better complete that before time runs out, {defaultLogin.userName}!
+        You'd better complete that before time runs out, {player.userName}!
       </>
     );
   }
