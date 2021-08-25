@@ -1,12 +1,12 @@
 //Component Tree:
 // App
-//  |---LoginPage , GamePage , StatsPage
-//                     |- GameWindow,                GameInput,                     GameLog
-//                         |- RulesBox, WinBox         |-ColorGrid, ComboEntry
+//  |---LoginPage ,         GamePage ,           StatsPage
+//                             |- GameWindow,                GameInput,                     GameLog
+//                                   |- RulesBox, WinBox         |-ColorGrid, ComboEntry
 
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import LoginPage from "./Components/LoginPage";
 import StatsPage from "./Components/StatsPage";
 import GamePage from "./Components/GamePage";
@@ -20,6 +20,8 @@ function App() {
     profilePic: "",
     winArray: [],
   });
+  const [loginButton, setLoginButton] = useState("Create New Profile!")
+  const history = useHistory();
 
   //Initial GET request
   useEffect(() => {
@@ -28,10 +30,8 @@ function App() {
       .then((uList) => setUserList(uList));
   }, []);
 
-  //function to handle submission of new profile
+  //function to handle submission of new profile. Upon submission, user will be redirected to game page
   function handleSubmit(e) {
-    //upon submission, user can be redirected to game page
-    //did not keep e.prevenDefault() because page would be redirected to gaming page anyway
     if (!player.userName || !player.profilePic) {
       alert("Please complete all fields to play");
     } else {
@@ -44,8 +44,9 @@ function App() {
       })
         .then((r) => r.json())
         .then((data) => console.log("POSTed"));
-      //e.preventDefault();
-      <Redirect to="/game"/>
+        setLoginButton("Head to the Game page!")
+        alert('Remember: Leaving the game page will DELETE your progress, so stay there until you CRACK THE CODE!')
+        history.push("/game")
     }
   }
 
@@ -71,6 +72,7 @@ function App() {
             onAddNewUser={onAddNewUser}
             player={player}
             handleSubmit={handleSubmit}
+            loginButton={loginButton}
           />
         </Route>
       </Switch>
