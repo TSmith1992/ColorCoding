@@ -2,7 +2,7 @@ import React from "react";
 
 function LoginPage({ onAddNewUser, defaultLogin, handleSubmit }) {
   
-  if (defaultLogin) {
+  if (defaultLogin.userName==="") {
     return (
       <div className="container">
         <form className="add-profile-form" onSubmit={handleSubmit}>

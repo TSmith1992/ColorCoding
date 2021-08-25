@@ -6,7 +6,7 @@
 
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import LoginPage from "./Components/LoginPage";
 import StatsPage from "./Components/StatsPage";
 import GamePage from "./Components/GamePage";
@@ -44,7 +44,8 @@ function App() {
       })
         .then((r) => r.json())
         .then((data) => console.log("POSTed"));
-      e.preventDefault();
+      //e.preventDefault();
+      <Redirect to="/game"/>
     }
   }
 
