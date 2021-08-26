@@ -1,12 +1,10 @@
 import React from "react";
 
-function LoginPage({ onAddNewUser, player, handleSubmit }) {
-  
-  // if (player.userName==="") {
-    return (
+function LoginPage({ onAddNewUser, player, handleSubmit, loginButton }) {
+  return(
       <div className="container">
         <form className="add-profile-form" onSubmit={handleSubmit}>
-          <h3>Login Page:</h3>
+          <h1>Login Page:</h1>
           <input
             type="text"
             name="userName"
@@ -26,19 +24,12 @@ function LoginPage({ onAddNewUser, player, handleSubmit }) {
           <input
             type="submit"
             name="submit"
-            value="Create New Profile!"
+            value={loginButton}
             className="submit"
           />
         </form>
       </div>
     );
-  // } else {
-  //   return (
-  //     <>
-  //       You'd better complete that before time runs out, {player.userName}!
-  //     </>
-  //   );
-  // }
-}
+  } 
 
 export default LoginPage;
