@@ -87,7 +87,7 @@ function App() {
           <StatsPage userList={userList} />
         </Route>
         <Route path="/game">
-          <GamePage player={player} postWin={postWin} />
+          <GamePage player={player} postWin={postWin} fetchAPI={fetchAPI}/>
         </Route>
         <Route path="/">
           <LoginPage
