@@ -1,15 +1,24 @@
 import React from "react";
 
 //CREATE COMMENT SECTION FOR USER. THEN CREATE FETCH REQUEST TO UPDATE PLAYER'S COMMENT
-function WinBox({ player }) {
+function WinBox({ player, gameLog, handleCommentSubmit }) {
   return (
     <div>
       <img
-        src="https://c.tenor.com/6Hixx4SFAeQAAAAM/backing-you-get-yours.gif"
-        alt="win gif"
+        src="https://media3.giphy.com/media/gQdejV5BBChHi/giphy.gif"
+        alt="Duck diving in a vault of gold"
       />
-      You won! The correct code was indeed ***! Good job player! Head to the
-      leaderboard to see how you compare to other players!
+      You won! The correct code was indeed {gameLog}! Good job {player.userName}! Head to the
+      leaderboard to see how you compare to other players! Before you do though, tell us how you feel! 
+      <form className="add-comment-form" onSubmit={handleCommentSubmit}>
+          <input
+            type="text"
+            name="comment"
+            placeholder="How does it feel to be a winner?!"
+            // defaultValue={player.name}
+            // onChange={onAddNewUser}
+          />
+      </form>
     </div>
   );
 }

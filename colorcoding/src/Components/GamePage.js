@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router";
 import { createWinObject, newGameObject } from "../gamefunctions";
 import GameInput from "./GameInput";
 import GameLog from "./GameLog";
 import GameWindow from "./GameWindow";
 import IntroRulesBox from "./IntroRulesBox";
+import WinBox from "./WinBox";
 
 function GamePage({ player, postWin }) {
   const [colorChoices, setColorChoices] = useState([
@@ -17,6 +19,10 @@ function GamePage({ player, postWin }) {
   const [mostRecentWin, setMostRecentWin] = useState({});
   const [showSafe, setShowSafe] = useState(false);
   const [showRules, setShowRules] = useState(false)
+  const [showWinBox, setShowWinBox] = useState(false)
+  const [commentSubmit, setCommentSubmit] = useState("")
+  
+  const history = useHistory();
 
   const checkWin = () =>
     gameLog[0] && gameLog[gameLog.length - 1].win ? true : false;
@@ -67,11 +73,17 @@ function GamePage({ player, postWin }) {
     game = gameObject,
     user = player,
     time = timer,
-    log = gameLog
+    log = gameLog,
   ) {
     let winObject = createWinObject(game, time, log);
     setMostRecentWin(winObject);
     postWin(winObject);
+    setShowWinBox(!showWinBox)
+  }
+
+  function handleCommentSubmit(e){
+      e.preventDefault()
+      history.push("/leaderboard")
   }
 
   console.log("Most Recent Win", mostRecentWin);
@@ -100,6 +112,8 @@ function GamePage({ player, postWin }) {
       ) : (
         ""
       )}
+      {showWinBox? <WinBox gameLog={gameLog} player={player}/> : ""}
+      <WinBox gameLog={gameLog} player={player} handleCommentSubmit={handleCommentSubmit}/>
       <GameLog logEntries={gameLog} />
     </div>
   );
