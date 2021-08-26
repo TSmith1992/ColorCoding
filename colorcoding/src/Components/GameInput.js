@@ -19,7 +19,7 @@ function GameInput({colorChoices,setColorChoices,gameLog,setGameLog,gameObject,s
         <div id="game-input-area">
 
             {!gameObject.timeToWin ? 
-            <button onClick={()=>startGame()}>Start Game</button> :
+            <button onClick={()=>startGame()} id="start-button">Start Game</button> :
             <>
                 <div id="combo-display-area" className="input-section">
                     {colorChoices.map(colorChoice=><ComboEntry 
