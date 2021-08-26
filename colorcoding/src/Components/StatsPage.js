@@ -8,7 +8,7 @@ function StatsPage({ leaderList }) {
   const leaderBoardWin = leaderBoard.filter(
     (player) => player.winArray.length > 0
   );
-  
+
   return (
     <div className="site-page">
     <table>

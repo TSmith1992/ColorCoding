@@ -5,7 +5,7 @@
 //                                   |- RulesBox, WinBox         |-ColorGrid, ComboEntry
 
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
 import LoginPage from "./Components/LoginPage";
 import StatsPage from "./Components/StatsPage";
@@ -14,8 +14,8 @@ import NavBar from "./Components/NavBar";
 
 function App() {
   const fetchAPI = "http://localhost:3000/userList";
-  const [userList, setUserList] = useState([]);
   const [leaderList, setLeaderlist] = useState([])
+  const [updateLeaderBoard, setUpdateLeaderBoard] = useState(false)
   const [player, setPlayer] = useState({
     userName: "",
     profilePic: "",
@@ -24,14 +24,9 @@ function App() {
   const [loginButton, setLoginButton] = useState("Create New Profile");
   const history = useHistory();
 
-  //Initial GET request
-  useEffect(() => {
-    fetch(fetchAPI)
-      .then((r) => r.json())
-      .then((uList) => setUserList(uList));
-  }, []);
 
   //function to handle submission of new profile. Upon submission, user will be redirected to game page
+
   function handleSubmit(e) {
     if (!player.userName || !player.profilePic) {
       alert("Please complete all fields to play");
@@ -58,6 +53,7 @@ function App() {
   }
 
   //function to create new profile
+
   function onAddNewUser(e) {
     const name = e.target.name;
     let value = e.target.value;
@@ -77,11 +73,14 @@ function App() {
       body: JSON.stringify({ winArray: newWinArray }),
     })
       .then((r) => r.json())
-      .then(console.log);
-      fetch(fetchAPI)
-      .then((r) => r.json())
-      .then((leaderList) => setLeaderlist(leaderList));
+      .then(setUpdateLeaderBoard(!updateLeaderBoard));
   }
+
+  //initializes update of leaderboard
+
+  if(updateLeaderBoard){fetch(fetchAPI)
+    .then((r) => r.json())
+    .then((leaderList) => setLeaderlist(leaderList));}
 
   return (
     <div className="App">
