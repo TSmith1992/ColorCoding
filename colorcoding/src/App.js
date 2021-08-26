@@ -15,6 +15,7 @@ import NavBar from "./Components/NavBar";
 function App() {
   const fetchAPI = "http://localhost:3000/userList";
   const [userList, setUserList] = useState([]);
+  const [leaderList, setLeaderlist] = useState([])
   const [player, setPlayer] = useState({
     userName: "",
     profilePic: "",
@@ -77,6 +78,9 @@ function App() {
     })
       .then((r) => r.json())
       .then(console.log);
+      fetch(fetchAPI)
+      .then((r) => r.json())
+      .then((leaderList) => setLeaderlist(leaderList));
   }
 
   return (
@@ -84,7 +88,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/leaderboard">
-          <StatsPage userList={userList} />
+          <StatsPage leaderList={leaderList} />
         </Route>
         <Route path="/game">
           <GamePage player={player} postWin={postWin} fetchAPI={fetchAPI}/>

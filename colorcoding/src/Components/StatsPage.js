@@ -1,7 +1,8 @@
 import React from "react";
 
-function StatsPage({ userList }) {
-  const leaderBoard = userList.sort(
+function StatsPage({ leaderList }) {
+  console.log("This is the leaderboard", leaderList)
+  const leaderBoard = leaderList.sort(
     (a, b) => b["winArray"].length - a["winArray"].length
   );
 
