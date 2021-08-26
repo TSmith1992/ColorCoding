@@ -16,7 +16,7 @@ function GamePage({ player, postWin, fetchAPI }) {
   const [gameLog, setGameLog] = useState([]);
   const [gameObject, setGameObject] = useState({});
   const [timer, setTimer] = useState(0);
-  const [mostRecentWin, setMostRecentWin] = useState({});
+  const [mostRecentWin, setMostRecentWin] = useState({}); 
   const [showSafe, setShowSafe] = useState(false);
   const [showRules, setShowRules] = useState(false)
   const [showWinBox, setShowWinBox] = useState(false)
@@ -74,16 +74,16 @@ function GamePage({ player, postWin, fetchAPI }) {
     time = timer,
     log = gameLog,
   ) {
+    setShowWinBox(!showWinBox)
     let winObject = createWinObject(game, time, log);
     setMostRecentWin(winObject);
-    //postWin(winObject);
-    setShowWinBox(!showWinBox)
+    postWin(winObject);
   }
 
   //add comment from win
   function handleCommentSubmit(e){
       e.preventDefault()
-      postWin({...mostRecentWin, "comment": commentSubmit });
+      //postWin({...mostRecentWin, "comment": commentSubmit });
       history.push("/leaderboard")
       
   }
@@ -100,7 +100,7 @@ function GamePage({ player, postWin, fetchAPI }) {
       <h1>Crack the Code!</h1>
       {!showSafe ? <IntroRulesBox player={player} /> : ""}
       {!showSafe ? (
-        <button className="rulesButton" onClick={() => setShowSafe(!showSafe)}>
+        <button onClick={() => setShowSafe(!showSafe)}>
           Go to safe
         </button>
       ) : (
