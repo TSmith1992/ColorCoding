@@ -1,7 +1,6 @@
 import React from "react";
 
 function StatsPage({ leaderList }) {
-  console.log("This is the leaderboard", leaderList)
   const leaderBoard = leaderList.sort(
     (a, b) => b["winArray"].length - a["winArray"].length
   );
@@ -9,7 +8,7 @@ function StatsPage({ leaderList }) {
   const leaderBoardWin = leaderBoard.filter(
     (player) => player.winArray.length > 0
   );
-
+  
   return (
     <div className="site-page">
     <table>
