@@ -20,7 +20,7 @@ function App() {
     profilePic: "",
     winArray: [],
   });
-  const [loginButton, setLoginButton] = useState("Create New Profile!")
+  const [loginButton, setLoginButton] = useState("Create New Profile!");
   const history = useHistory();
 
   //Initial GET request
@@ -43,11 +43,16 @@ function App() {
         body: JSON.stringify(player),
       })
         .then((r) => r.json())
-        .then((data) => { console.log("POSTed"); 
-                         setPlayer(data)})
-        setLoginButton("Head to the Game page!")
-        alert('Remember: Leaving the game page will DELETE your progress, so stay there until you CRACK THE CODE!')
-        history.push("/game")
+        .then((data) => {
+          console.log("POSTed");
+          setPlayer(data);
+        });
+      setLoginButton("Head to the Game page!");
+      e.preventDefault();
+      alert(
+        "Remember: Leaving the game page will DELETE your progress, so stay there until you CRACK THE CODE!"
+      );
+      history.push("/game");
     }
   }
 
@@ -60,17 +65,19 @@ function App() {
 
   //the function postWin should take in the user data and a game win object. It should then post it to the server
 
-  function postWin(winObject,user=player) {
-    winObject.id = user.winArray.length+1;
-    let newWinArray = [...user.winArray,winObject];
-    fetch(`${fetchAPI}/${user.id}`,{
+  function postWin(winObject, user = player) {
+    winObject.id = user.winArray.length + 1;
+    let newWinArray = [...user.winArray, winObject];
+    fetch(`${fetchAPI}/${user.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({winArray: newWinArray})
-    }).then(r=>r.json()).then(console.log);
-}
+      body: JSON.stringify({ winArray: newWinArray }),
+    })
+      .then((r) => r.json())
+      .then(console.log);
+  }
 
   return (
     <div className="App">

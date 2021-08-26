@@ -1,45 +1,41 @@
 {
-  "userList": [
-    {
+  "userList": [{
       "id": 1,
       "userName": "BumbleBee",
       "profilePic": "https://pbs.twimg.com/profile_images/1096104026024726528/ubpWKojv.png",
-      "winArray": [
-        {
-          "id": 1,
-          "winCombo": [
-            "red",
-            "orange",
-            "green"
-          ],
-          "comment": "You can't beat me!",
-          "winTime": 72000
-        }
-      ]
+      "winArray": [{
+        "id": 1,
+        "winCombo": [
+          "red",
+          "orange",
+          "green"
+        ],
+        "comment": "You can't beat me!",
+        "winTime": 72000,
+        "numOfTries": 3
+      }]
     },
     {
       "id": 2,
       "userName": "Megatron",
       "profilePic": "https://assets.entrepreneur.com/content/3x2/2000/megatron-eat-your-heart-out-mit-built-transformer.jpg",
-      "winArray": [
-        {
-          "id": 1,
-          "winCombo": [
-            "yellow",
-            "black",
-            "green"
-          ],
-          "comment": "New Winner!",
-          "winTime": 90000
-        }
-      ]
+      "winArray": [{
+        "id": 1,
+        "winCombo": [
+          "yellow",
+          "black",
+          "green"
+        ],
+        "comment": "New Winner!",
+        "winTime": 90000,
+        "numOfTries": 1
+      }]
     },
     {
       "id": 3,
       "userName": "Optimus Prime",
       "profilePic": "https://i.pinimg.com/originals/d7/69/93/d769935059ac8329e4627223c55f54f7.jpg",
-      "winArray": [
-        {
+      "winArray": [{
           "id": 1,
           "winCombo": [
             "blue",
@@ -47,7 +43,8 @@
             "indigo"
           ],
           "comment": "Oh yeah!",
-          "winTime": 120000
+          "winTime": 120000,
+          "numOfTries": 2
         },
         {
           "id": 2,
@@ -57,7 +54,8 @@
             "red"
           ],
           "comment": "BooYah",
-          "winTime": 100000
+          "winTime": 100000,
+          "numOfTries": 6
         }
       ]
     },
@@ -65,8 +63,7 @@
       "id": 4,
       "userName": "Ironhide",
       "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUeJukRk_X_YWeW6eECTd9iUAZOyblLP40Xg&usqp=CAU",
-      "winArray": [
-        {
+      "winArray": [{
           "id": 1,
           "winCombo": [
             "red",
@@ -74,7 +71,8 @@
             "orange"
           ],
           "comment": "MVP!",
-          "winTime": 180000
+          "winTime": 180000,
+          "numOfTries": 1
         },
         {
           "id": 2,
@@ -84,7 +82,8 @@
             "blue"
           ],
           "comment": "Winner!",
-          "winTime": 100000
+          "winTime": 100000,
+          "numOfTries": 5
         },
         {
           "id": 3,
@@ -94,27 +93,25 @@
             "red"
           ],
           "comment": "I'm on a roll!",
-          "winTime": 100000
+          "winTime": 100000,
+          "numOfTries": 3
         }
       ]
     },
     {
       "userName": "Test",
       "profilePic": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png",
-      "winArray": [
-        {
-          "winCombo": [
-            "orange",
-            "violet",
-            "white"
-          ],
-          "comment": "I won!",
-          "winTime": 22000,
-          "numOfTries": 3,
-          "id": 1
-        }
-      ],
-      "id": 5
+      "winArray": [{
+        "winCombo": [
+          "orange",
+          "violet",
+          "white"
+        ],
+        "comment": "I won!",
+        "winTime": 22000,
+        "numOfTries": 3,
+        "id": 1
+      }]
     }
   ]
 }
