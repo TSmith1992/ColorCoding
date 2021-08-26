@@ -7,7 +7,7 @@
       "winArray": [
         {
           "id": 1,
-          "WinCombo": [
+          "winCombo": [
             "red",
             "orange",
             "green"
@@ -24,7 +24,7 @@
       "winArray": [
         {
           "id": 1,
-          "WinCombo": [
+          "winCombo": [
             "yellow",
             "black",
             "green"
@@ -41,7 +41,7 @@
       "winArray": [
         {
           "id": 1,
-          "WinCombo": [
+          "winCombo": [
             "blue",
             "yellow",
             "indigo"
@@ -51,7 +51,7 @@
         },
         {
           "id": 2,
-          "WinCombo": [
+          "winCombo": [
             "white",
             "black",
             "red"
@@ -68,7 +68,7 @@
       "winArray": [
         {
           "id": 1,
-          "WinCombo": [
+          "winCombo": [
             "red",
             "indigo",
             "orange"
@@ -78,7 +78,7 @@
         },
         {
           "id": 2,
-          "WinCombo": [
+          "winCombo": [
             "red",
             "green",
             "blue"
@@ -88,7 +88,7 @@
         },
         {
           "id": 3,
-          "WinCombo": [
+          "winCombo": [
             "black",
             "white",
             "red"
