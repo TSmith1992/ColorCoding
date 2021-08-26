@@ -36,14 +36,14 @@ function StatsPage({ userList }) {
             <td>
               <strong>{user.userName}</strong>
             </td>
-            <td style={{ background: `${user.winArray[0].WinCombo[0]}` }}>
-              {user.winArray[0].WinCombo[0]}
+            <td style={{ background: `${user.winArray[0].winCombo[0]}` }}>
+              {user.winArray[0].winCombo[0]}
             </td>
-            <td style={{ background: `${user.winArray[0].WinCombo[1]}` }}>
-              {user.winArray[0].WinCombo[1]}
+            <td style={{ background: `${user.winArray[0].winCombo[1]}` }}>
+              {user.winArray[0].winCombo[1]}
             </td>
-            <td style={{ background: `${user.winArray[0].WinCombo[2]}` }}>
-              {user.winArray[0].WinCombo[2]}
+            <td style={{ background: `${user.winArray[0].winCombo[2]}` }}>
+              {user.winArray[0].winCombo[2]}
             </td>
             <td>{user.winArray[0].winTime} seconds</td>
             <td>

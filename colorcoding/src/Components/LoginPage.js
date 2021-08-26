@@ -1,8 +1,7 @@
 import React from "react";
 
 function LoginPage({ onAddNewUser, player, handleSubmit, loginButton }) {
-  
-return (
+  return(
       <div className="container">
         <form className="add-profile-form" onSubmit={handleSubmit}>
           <h1>Login Page:</h1>
