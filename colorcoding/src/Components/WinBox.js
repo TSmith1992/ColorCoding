@@ -15,7 +15,7 @@ function WinBox({ player, gameLog, handleCommentSubmit, onAddUserComment }) {
             type="text"
             name="comment"
             placeholder="How does it feel to be a winner?!"
-            value="TESTING COMMENT"
+            //value="TESTING COMMENT"
             onChange={onAddUserComment}
           />
       </form>
