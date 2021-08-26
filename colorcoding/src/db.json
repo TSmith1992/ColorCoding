@@ -121,58 +121,6 @@
           "id": 1
         }
       ]
-    },
-    {
-      "userName": "Gargoyle",
-      "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD-UKf4TNpPAgvDSgohP5GpsDBc2marwiKcQ&usqp=CAU",
-      "winArray": [],
-      "id": 5
-    },
-    {
-      "userName": "testGargoyletestA",
-      "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD-UKf4TNpPAgvDSgohP5GpsDBc2marwiKcQ&usqp=CAU",
-      "winArray": [
-        {
-          "winCombo": [
-            "indigo",
-            "violet",
-            "indigo"
-          ],
-          "winTime": 20000,
-          "numOfTries": 18,
-          "id": 1
-        }
-      ],
-      "id": 6
-    },
-    {
-      "userName": "Gargoyleh",
-      "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD-UKf4TNpPAgvDSgohP5GpsDBc2marwiKcQ&usqp=CAU",
-      "winArray": [
-        {
-          "winCombo": [
-            "blue",
-            "green",
-            "blue"
-          ],
-          "winTime": 11000,
-          "numOfTries": 1,
-          "id": 1
-        }
-      ],
-      "id": 7
-    },
-    {
-      "userName": "Gargoyleb",
-      "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD-UKf4TNpPAgvDSgohP5GpsDBc2marwiKcQ&usqp=CAU",
-      "winArray": [],
-      "id": 8
-    },
-    {
-      "userName": "Gargoyle9",
-      "profilePic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD-UKf4TNpPAgvDSgohP5GpsDBc2marwiKcQ&usqp=CAU",
-      "winArray": [],
-      "id": 9
     }
   ]
 }

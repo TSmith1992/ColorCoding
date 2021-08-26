@@ -20,7 +20,7 @@ function App() {
     profilePic: "",
     winArray: [],
   });
-  const [loginButton, setLoginButton] = useState("Create New Profile!");
+  const [loginButton, setLoginButton] = useState("Create New Profile");
   const history = useHistory();
 
   //Initial GET request

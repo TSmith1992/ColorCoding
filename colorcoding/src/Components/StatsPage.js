@@ -10,6 +10,7 @@ function StatsPage({ userList }) {
   );
 
   return (
+    <div className="site-page">
     <table>
       <thead>
         <tr>
@@ -54,6 +55,7 @@ function StatsPage({ userList }) {
         ))}
       </tbody>
     </table>
+    </div>
   );
 }
 

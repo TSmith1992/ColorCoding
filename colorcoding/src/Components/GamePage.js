@@ -77,13 +77,14 @@ function GamePage({ player, postWin, fetchAPI }) {
     setShowWinBox(!showWinBox)
     let winObject = createWinObject(game, time, log);
     setMostRecentWin(winObject);
-    postWin(winObject);
+    setShowWinBox(!showWinBox)
   }
 
   //add comment from win
   function handleCommentSubmit(e){
-      e.preventDefault()
-      //postWin({...mostRecentWin, "comment": commentSubmit });
+      e.preventDefault();
+      postWin({...mostRecentWin, "comment": commentSubmit });
+
       history.push("/leaderboard")
       
   }
@@ -96,39 +97,33 @@ function GamePage({ player, postWin, fetchAPI }) {
   console.log("Most Recent Win", mostRecentWin);
 
   return (
-    <div id="game-area">
-      <h1>Crack the Code!</h1>
-      {!showSafe ? <IntroRulesBox player={player} /> : ""}
-      {!showSafe ? (
-        <button onClick={() => setShowSafe(!showSafe)}>
-          Go to safe
-        </button>
-      ) : (
-        ""
-      )}
-      {showSafe ? <GameWindow 
-      timer={timer} 
-      showRules={showRules} 
-      player={player}/> : ""}
-      {showSafe ? (
-        <GameInput
-          colorChoices={colorChoices}
-          setColorChoices={setColorChoices}
-          gameLog={gameLog}
-          setGameLog={setGameLog}
-          gameObject={gameObject}
-          startGame={startGame}
-        />
-      ) : (
-        ""
-      )}
-      {showWinBox? 
-      <WinBox 
-      gameLog={gameLog} 
-      player={player}
-      handleCommentSubmit={handleCommentSubmit} 
-      onAddUserComment={onAddUserComment}/>
-      : ""}
+    <div id="game-area" className="site-page">
+      <div id="game-text-wrapper">
+        <h1>Crack the Code!</h1>
+        {!showSafe && !showWinBox ? <IntroRulesBox player={player} /> : ""}
+        {!showSafe && !showWinBox? (
+          <button id="rulesButton" onClick={() => setShowSafe(!showSafe)}>
+            Go to safe
+          </button>
+        ) : (
+          ""
+        )}
+        {showSafe && !showWinBox ? <GameWindow timer={timer} showRules={showRules} player={player}/> : ""}
+        {showSafe && !showWinBox ? (
+          <GameInput
+            colorChoices={colorChoices}
+            setColorChoices={setColorChoices}
+            gameLog={gameLog}
+            setGameLog={setGameLog}
+            gameObject={gameObject}
+            startGame={startGame}
+          />
+        ) : (
+          ""
+        )}
+        {showWinBox? <WinBox mostRecentWin={mostRecentWin} player={player} handleCommentSubmit={handleCommentSubmit}/> : null}
+      </div>
+
       <GameLog logEntries={gameLog} />
     </div>
   );
