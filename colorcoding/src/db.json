@@ -106,35 +106,18 @@
       ]
     },
     {
-      "userName": "Test",
-      "profilePic": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png",
+      "userName": "Ratchet",
+      "profilePic": "https://tfwiki.net/mediawiki/images2/thumb/5/5e/Movie_Ratchet_promorender.jpg/350px-Movie_Ratchet_promorender.jpg",
       "winArray": [
         {
           "winCombo": [
             "orange",
-            "violet",
-            "white"
-          ],
-          "comment": "I won!",
-          "winTime": 22000,
-          "numOfTries": 3,
-          "id": 1
-        }
-      ]
-    },
-    {
-      "userName": "Hotrod",
-      "profilePic": " ",
-      "winArray": [
-        {
-          "winCombo": [
-            "blue",
-            "black",
+            "green",
             "green"
           ],
           "comment": "",
-          "winTime": 13000,
-          "numOfTries": 1,
+          "winTime": 24000,
+          "numOfTries": 6,
           "id": 1
         }
       ],
