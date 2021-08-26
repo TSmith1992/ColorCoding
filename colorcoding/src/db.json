@@ -121,24 +121,6 @@
           "id": 1
         }
       ]
-    },
-    {
-      "userName": "Hotrod",
-      "profilePic": " ",
-      "winArray": [
-        {
-          "winCombo": [
-            "blue",
-            "black",
-            "green"
-          ],
-          "comment": "",
-          "winTime": 13000,
-          "numOfTries": 1,
-          "id": 1
-        }
-      ],
-      "id": 5
     }
   ]
 }

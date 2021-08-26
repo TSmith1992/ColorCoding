@@ -1,6 +1,7 @@
 import React from "react";
 
 //CREATE COMMENT SECTION FOR USER. THEN CREATE FETCH REQUEST TO UPDATE PLAYER'S COMMENT
+
 function WinBox({ player, mostRecentWin, handleCommentSubmit }) {
   return (
     <div>
@@ -15,8 +16,8 @@ function WinBox({ player, mostRecentWin, handleCommentSubmit }) {
             type="text"
             name="comment"
             placeholder="How does it feel to be a winner?!"
-            // defaultValue={player.name}
-            // onChange={onAddNewUser}
+            //value="TESTING COMMENT"
+            onChange={onAddUserComment}
           />
       </form>
     </div>
