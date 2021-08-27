@@ -74,7 +74,6 @@ function GamePage({ player, postWin, fetchAPI }) {
     time = timer,
     log = gameLog,
   ) {
-    setShowWinBox(!showWinBox)
     let winObject = createWinObject(game, time, log);
     setMostRecentWin(winObject);
     setShowWinBox(!showWinBox)
@@ -121,7 +120,7 @@ function GamePage({ player, postWin, fetchAPI }) {
         ) : (
           ""
         )}
-        {showWinBox? <WinBox mostRecentWin={mostRecentWin} player={player} handleCommentSubmit={handleCommentSubmit} onAddUserComment={onAddUserComment}/> : null}
+        {showWinBox? <WinBox mostRecentWin={mostRecentWin} player={player} handleCommentSubmit={handleCommentSubmit} onAddUserComment={onAddUserComment} gameObject={gameObject}/> : null}
       </div>
 
       {gameLog.length>0 ? <GameLog logEntries={gameLog} /> : null}
