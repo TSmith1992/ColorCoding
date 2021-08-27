@@ -1,6 +1,6 @@
 const comboColors = ["white","red","orange","yellow","green","blue","indigo","violet","black"];
 const defaultNumOfColors = 3;
-const defaultGameTime = 60000;
+const defaultGameTime = 180000;
 
 //create a function that takes in a colorChoices object and the current gameLog and returns a new gameLog with the current choices in a log form
 

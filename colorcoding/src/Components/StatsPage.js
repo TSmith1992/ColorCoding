@@ -46,7 +46,7 @@ function StatsPage({ leaderList }) {
             <td style={{ background: `${user.winArray[0].winCombo[2]}` }}>
               {user.winArray[0].winCombo[2]}
             </td>
-            <td>{user.winArray[0].winTime} seconds</td>
+            <td>{user.winArray[0].winTime/1000} seconds</td>
             <td>
               <em>{user.winArray[0].comment}</em>
             </td>
