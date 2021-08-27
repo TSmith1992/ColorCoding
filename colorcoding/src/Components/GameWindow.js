@@ -11,10 +11,10 @@ function GameWindow({ timer, showRules, player }) {
   const { userName, profilePic } = player;
   // console.log("Game Window Timer:",timer);
   return (
-    <div>
+    <div id="short-rules">
       {showRules ? (
         <div>
-          <strong>
+          {/* <strong>
             <em>=RULES=</em>
           </strong>
           * You will have unlimited chances to try and choose the correct
@@ -25,13 +25,17 @@ function GameWindow({ timer, showRules, player }) {
             <em>***CRACK THE CODE***</em>
           </strong>
           soon! * The Safe gives you some clues to let you know how you're
-          doing. Each symbol after your entry means something:
-          <div>
+          doing. Each symbol after your entry means something: */}
+          {/* <div>
             ❌ : No colors were correct. 😬 : Only one (1) of the colors was
             correct. 🔥 : Two (2) of the colors are correct. 🌟 : SUCCESS!
-          </div>{" "}
-          Good luck, {userName}!
-          <img src={profilePic} alt="Player" />
+          </div> */}
+          {/* Good luck, {userName}!
+          <img src={profilePic} alt="Player" /> */}
+          <p>❌ : No colors were correct.</p>
+          <p>😬 : Only one (1) of the colors was</p>
+          <p>🔥 : Two (2) of the colors are correct.</p>
+          <p>🌟 : SUCCESS!</p>
         </div>
       ) : (
         <img

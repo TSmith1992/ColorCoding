@@ -104,23 +104,6 @@
           "numOfTries": 3
         }
       ]
-    },
-    {
-      "userName": "Test",
-      "profilePic": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png",
-      "winArray": [
-        {
-          "winCombo": [
-            "orange",
-            "violet",
-            "white"
-          ],
-          "comment": "I won!",
-          "winTime": 22000,
-          "numOfTries": 3,
-          "id": 1
-        }
-      ]
     }
   ]
 }

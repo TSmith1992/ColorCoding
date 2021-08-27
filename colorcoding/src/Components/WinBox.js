@@ -4,13 +4,13 @@ import React from "react";
 
 function WinBox({ player, mostRecentWin, handleCommentSubmit, onAddUserComment }) {
   return (
-    <div>
+    <div id="win-box">
       <img
         src="https://media3.giphy.com/media/gQdejV5BBChHi/giphy.gif"
         alt="Duck diving in a vault of gold"
       />
-      You won! The correct code was indeed {mostRecentWin.winCombo}! Good job {player.userName}! Head to the
-      leaderboard to see how you compare to other players! Before you do though, tell us how you feel! 
+      <p>You won! The correct code was indeed {mostRecentWin.winCombo[0]}-{mostRecentWin.winCombo[1]}-{mostRecentWin.winCombo[2]}! Good job {player.userName}! Head to the
+      leaderboard to see how you compare to other players! Before you do though, tell us how you feel!</p>
       <form className="add-comment-form" onSubmit={handleCommentSubmit}>
           <input
             type="text"
