@@ -33,7 +33,7 @@ function GameWindow({ timer, showRules, player }) {
           {/* Good luck, {userName}!
           <img src={profilePic} alt="Player" /> */}
           <p>❌ : No colors were correct.</p>
-          <p>😬 : Only one (1) of the colors was</p>
+          <p>😬 : Only one (1) of the colors was correct</p>
           <p>🔥 : Two (2) of the colors are correct.</p>
           <p>🌟 : SUCCESS!</p>
         </div>

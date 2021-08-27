@@ -29,7 +29,7 @@ function IntroRulesBox({ player }) {
           <p>* The Safe gives you some clues to let you know how you're
           doing. Each symbol after your entry means something: </p>
           <p>❌ : No colors were correct.</p>
-          <p>😬 : Only one (1) of the colors was</p>
+          <p>😬 : Only one (1) of the colors was correct</p>
           <p>🔥 : Two (2) of the colors are correct.</p>
           <p>🌟 : SUCCESS!</p>
           If you forget the rules while you're tryin', don't worry: I'll keep the rules posted for ya when ya get started {userName}!
