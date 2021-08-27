@@ -104,24 +104,6 @@
           "numOfTries": 3
         }
       ]
-    },
-    {
-      "userName": "Ratchet",
-      "profilePic": "https://tfwiki.net/mediawiki/images2/thumb/5/5e/Movie_Ratchet_promorender.jpg/350px-Movie_Ratchet_promorender.jpg",
-      "winArray": [
-        {
-          "winCombo": [
-            "orange",
-            "green",
-            "green"
-          ],
-          "comment": "",
-          "winTime": 24000,
-          "numOfTries": 6,
-          "id": 1
-        }
-      ],
-      "id": 5
     }
   ]
 }

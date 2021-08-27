@@ -58,7 +58,7 @@ function createWinObject(gameObject,time,log) {
     //we will need to add the id to this object later
     return {
         winCombo: [...gameObject.winningCombo],
-        comment: "I won!",
+        //comment: "I won!",
         winTime: gameObject.timeToWin-time,
         numOfTries: log.length
     }

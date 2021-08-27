@@ -7,7 +7,7 @@ import GameWindow from "./GameWindow";
 import IntroRulesBox from "./IntroRulesBox";
 import WinBox from "./WinBox";
 
-function GamePage({ player, postWin }) {
+function GamePage({ player, postWin, fetchAPI }) {
   const [colorChoices, setColorChoices] = useState([
     { id: 1, color: "white" },
     { id: 2, color: "white" },
@@ -16,7 +16,7 @@ function GamePage({ player, postWin }) {
   const [gameLog, setGameLog] = useState([]);
   const [gameObject, setGameObject] = useState({});
   const [timer, setTimer] = useState(0);
-  const [mostRecentWin, setMostRecentWin] = useState({});
+  const [mostRecentWin, setMostRecentWin] = useState({}); 
   const [showSafe, setShowSafe] = useState(false);
   const [showRules, setShowRules] = useState(false)
   const [showWinBox, setShowWinBox] = useState(false)
@@ -26,7 +26,6 @@ function GamePage({ player, postWin }) {
 
   const checkWin = () =>
     gameLog[0] && gameLog[gameLog.length - 1].win ? true : false;
-  // console.log("Win?",checkWin());
   // console.log(gameLog);
 
   console.log("Player", player);
@@ -75,16 +74,24 @@ function GamePage({ player, postWin }) {
     time = timer,
     log = gameLog,
   ) {
+    setShowWinBox(!showWinBox)
     let winObject = createWinObject(game, time, log);
     setMostRecentWin(winObject);
-    // postWin(winObject);
     setShowWinBox(!showWinBox)
   }
 
+  //add comment from win
   function handleCommentSubmit(e){
       e.preventDefault();
       postWin({...mostRecentWin, "comment": commentSubmit });
+
       history.push("/leaderboard")
+      
+  }
+
+  function onAddUserComment(e) {
+    let value = e.target.value;
+    setCommentSubmit(value);
   }
 
   console.log("Most Recent Win", mostRecentWin);
@@ -114,9 +121,11 @@ function GamePage({ player, postWin }) {
         ) : (
           ""
         )}
-        {showWinBox? <WinBox mostRecentWin={mostRecentWin} player={player} handleCommentSubmit={handleCommentSubmit}/> : null}
+        {showWinBox? <WinBox mostRecentWin={mostRecentWin} player={player} handleCommentSubmit={handleCommentSubmit} onAddUserComment={onAddUserComment}/> : null}
       </div>
+
       {gameLog.length>0 ? <GameLog logEntries={gameLog} /> : null}
+
     </div>
   );
 }
