@@ -32,12 +32,8 @@ function GamePage({ player, postWin, fetchAPI }) {
 
   useEffect(() => {
     let intervalTime = timer;
-    let gameLogInner = [...gameLog];
     let countdown = setInterval(() => {
       let win = checkWin();
-      // console.log("Win Status",win);
-      // console.log(gameLogInner);
-      // debugger;
       if (intervalTime > 0 && !win) {
         setTimer((timer) => timer - 1000);
         intervalTime = intervalTime - 1000;
