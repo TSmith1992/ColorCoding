@@ -120,7 +120,7 @@ function GamePage({ player, postWin, fetchAPI }) {
         ) : (
           ""
         )}
-        {showWinBox? <WinBox mostRecentWin={mostRecentWin} player={player} handleCommentSubmit={handleCommentSubmit} onAddUserComment={onAddUserComment} gameObject={gameObject}/> : null}
+        {showWinBox? <WinBox player={player} handleCommentSubmit={handleCommentSubmit} onAddUserComment={onAddUserComment} gameObject={gameObject}/> : null}
       </div>
 
       {gameLog.length>0 ? <GameLog logEntries={gameLog} /> : null}

@@ -2,7 +2,7 @@ import React from "react";
 
 //CREATE COMMENT SECTION FOR USER. THEN CREATE FETCH REQUEST TO UPDATE PLAYER'S COMMENT
 
-function WinBox({ player, mostRecentWin, handleCommentSubmit, onAddUserComment, gameObject }) {
+function WinBox({ player, handleCommentSubmit, onAddUserComment, gameObject }) {
 
   return (
     <div id="win-box">
